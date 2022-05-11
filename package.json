@@ -1,0 +1,23 @@
+{
+  "name": "ohmyfood",
+  "version": "1.0.0",
+  "description": "Mon projet OC 3 ohmyfood",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Manu870419/ohmyfood.git"
+  },
+  "author": "Emmanuel Beghin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Manu870419/ohmyfood/issues"
+  },
+  "homepage": "https://github.com/Manu870419/ohmyfood#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "sass": "^1.51.0"
+  }
+}
