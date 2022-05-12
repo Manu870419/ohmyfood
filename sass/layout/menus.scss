@@ -1,0 +1,25 @@
+@use "../utils/variables";
+
+.menus {
+  background-color: #f6f6f6;
+  .menus__cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    @media (max-width: variables.$breakpoint) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .card {
+    &__image {
+      height: 15rem;
+      border-radius: 1rem;
+      background-size: cover;
+    }
+    @for $i from 1 through 4 {
+        &__image-#{$i} {
+            background-image: url('../../assets/menu-#{$i}.jpg');
+        }
+    }
+  }
+}
