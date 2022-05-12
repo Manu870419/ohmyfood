@@ -1,7 +1,10 @@
 @use "../utils/variables";
+@use "../utils/colors";
+@use "../utils/box-shadow";
 
 .menus {
   background-color: #f6f6f6;
+  margin-bottom: 2rem;
   .menus__cards {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -9,17 +12,55 @@
     @media (max-width: variables.$breakpoint) {
       grid-template-columns: 1fr 1fr;
     }
+    @media (max-width: 992px) {
+      grid-template-columns: 1fr;
+    }
+    .new {
+      position: relative;
+    }
+    .new::before {
+      content: 'Nouveau';
+      position: absolute;
+      height: 2rem;
+      width: 5rem;
+      background-color: colors.$tertiaire;
+      color: darken(colors.$tertiaire, 50%);
+      display: grid;
+      place-items: center;
+      right: 1rem;
+      top: 1rem;
+    }
   }
   .card {
     &__image {
       height: 15rem;
-      border-radius: 1rem;
+      border-radius: 1rem 1rem 0 0;
       background-size: cover;
     }
     @for $i from 1 through 4 {
-        &__image-#{$i} {
-            background-image: url('../../assets/menu-#{$i}.jpg');
-        }
+      &__image-#{$i} {
+        background-image: url('../../assets/menu-#{$i}.jpg');
+      }
+    }
+    &__description {
+      position: relative;
+      background-color: white;
+      border-radius: 0 0 1rem 1rem;
+      @include box-shadow.base-shadow;
+
+      h3 {
+        padding-top: 1rem;
+      }
+      p {
+        padding-bottom: 1rem;
+      }
+      i {
+        font-size: 2rem;
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+      }
     }
   }
 }
