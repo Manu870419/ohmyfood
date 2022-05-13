@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2? family= Shrikhand & display=swap");
+@import url("https://fonts.googleapis.com/css2? family= Roboto:wght@300;400;500 & display=swap");
 *,
 ::before,
 ::after {
@@ -74,10 +74,10 @@ header h1 {
   padding: 1rem 2rem;
   border: none;
   border-radius: 2rem;
-  background-image: linear-gradient(#ff79da, #9356dc);
   transition: transform 200ms;
   margin-top: 1rem;
   box-shadow: 2px 1px 8px -3px black;
+  background-image: linear-gradient(#ff79da, #9356dc);
 }
 .explorer button:hover {
   transform: scale(1.02);
@@ -188,10 +188,10 @@ header h1 {
   box-shadow: 2px 1px 8px -3px black;
 }
 .menus .card__description h3 {
-  padding-top: 1rem;
+  padding: 1rem 0 0.5rem 1rem;
 }
 .menus .card__description p {
-  padding-bottom: 1rem;
+  padding: 0 0 1rem 1rem;
 }
 .menus .card__description i {
   font-size: 2rem;
@@ -199,6 +199,18 @@ header h1 {
   right: 1rem;
   top: 50%;
   transform: translateY(-50%);
+}
+.menus .card__description .fas {
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 0;
+  transition: all 200ms;
+  background-image: linear-gradient(#ff79da, #9356dc);
+}
+.menus .card__description:hover .fas {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.2);
 }
 
 footer {
