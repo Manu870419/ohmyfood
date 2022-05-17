@@ -1,7 +1,6 @@
 @use "../utils/variables";
 @use "../utils/colors";
-@use "../utils/box-shadow";
-@use "../utils/linear-gradient";
+@use "../utils/mixins";
 
 .menus {
   background-color: #f6f6f6;
@@ -47,7 +46,7 @@
       position: relative;
       background-color: white;
       border-radius: 0 0 1rem 1rem;
-      @include box-shadow.base-shadow;
+      @include mixins.base-shadow;
 
       h3 {
         padding: 1rem 0 0.5rem 1rem;
@@ -69,7 +68,7 @@
         -webkit-background-clip: text;
         opacity: 0;
         transition: all 200ms;
-        @include linear-gradient.gradient;
+        @include mixins.gradient;
       }
       &:hover .fas {
         opacity: 1;

@@ -1,0 +1,9 @@
+@mixin gradient {
+    background-image: linear-gradient(#ff79da, #9356dc);
+}
+@mixin base-shadow {
+    box-shadow: 2px 1px 8px -3px black;
+}
+@mixin zoom {
+    transform: scale(1.02);
+}
