@@ -1,6 +1,6 @@
-@use "../utils/variables";
-@use "../utils/colors";
-@use "../utils/mixins";
+@use "../utils/variables.scss";
+@use "../utils/colors.scss";
+@use "../utils/mixins.scss";
 
 .menus {
   background-color: #f6f6f6;
@@ -39,41 +39,17 @@
     }
     @for $i from 1 through 4 {
       &__image-#{$i} {
-        background-image: url('../../assets/menu-#{$i}.jpg');
+        background-image: url('assets/menu-#{$i}.jpg');
       }
     }
     &__description {
-      position: relative;
-      background-color: white;
-      border-radius: 0 0 1rem 1rem;
-      @include mixins.base-shadow;
+      @include mixins.heart-animated;
+      } 
 
-      h3 {
-        padding: 1rem 0 0.5rem 1rem;
-      }
+      h3,
       p {
-        padding: 0 0 1rem 1rem;
-      }
-
-      i {
-        font-size: 2rem;
-        position: absolute;
-        right: 1rem;
-        top: 50%;
-        transform: translateY(-50%);
-      }
-      .fas {
-        color: transparent;
-        background-clip: text;
-        -webkit-background-clip: text;
-        opacity: 0;
-        transition: all 200ms;
-        @include mixins.gradient;
-      }
-      &:hover .fas {
-        opacity: 1;
-        transform: translateY(-50%) scale(1.2);
-      }
+        padding:0.3rem;
+      
     }
   }
 }

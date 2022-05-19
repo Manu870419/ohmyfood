@@ -1,0 +1,11 @@
+@use "../utils/mixins.scss";
+
+
+
+img {
+    max-width: 100%;
+}
+
+main h2 {
+   @include mixins.heart-animated;
+}
