@@ -77,7 +77,8 @@ header h1 {
   border-radius: 2rem;
   transition: transform 200ms;
   margin-top: 1rem;
-  box-shadow: 2px 1px 8px -3px black;
+  cursor: pointer;
+  box-shadow: 2px 1px 8px -3px #7e7e7e;
   background-image: linear-gradient(to top, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
 }
 .explorer button:hover {
@@ -105,7 +106,7 @@ header h1 {
   padding: 1.5rem 2rem;
   flex-grow: 1;
   border-radius: 1rem;
-  box-shadow: 2px 1px 8px -3px black;
+  box-shadow: 2px 1px 8px -3px #7e7e7e;
 }
 .tuto li::before {
   content: counter(steps);
@@ -123,7 +124,7 @@ header h1 {
   transform: translateY(-50%);
 }
 .tuto li:hover {
-  transform: scale(1.02);
+  transform: none scale(1.02);
 }
 .tuto li i.fas {
   margin-right: 1rem;
@@ -189,6 +190,7 @@ header h1 {
 }
 #homepage .menus .card__description::before {
   display: inline-block;
+  position: absolute;
   font-style: normal;
   font-variant: normal;
   text-rendering: auto;
@@ -197,7 +199,6 @@ header h1 {
   font-weight: 400;
   content: "\f004";
   font-size: 2rem;
-  position: absolute;
   right: 1rem;
   top: 50%;
   transform: translateY(-50%);
@@ -209,6 +210,7 @@ header h1 {
 }
 #homepage .menus .card__description::after {
   display: inline-block;
+  position: absolute;
   font-style: normal;
   font-variant: normal;
   text-rendering: auto;
@@ -217,7 +219,6 @@ header h1 {
   font-weight: 900;
   content: "\f004";
   font-size: 2rem;
-  position: absolute;
   right: 1rem;
   top: 50%;
   transform: translateY(-50%);
@@ -251,10 +252,42 @@ footer p {
   padding: 0.2rem;
 }
 
+@keyframes quarterspin {
+  0% {
+    transform: rotate(-270deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
 body {
   background-color: #f6f6f6;
 }
 
+#page-resto header h1 {
+  box-shadow: none;
+}
+#page-resto header::before {
+  transition: all 200ms;
+}
+#page-resto header:hover::before {
+  transform: translateY(-25%) scale(1.2);
+}
+#page-resto header::before {
+  display: inline-block;
+  position: absolute;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f060";
+  left: 1rem;
+  top: 2%;
+  transform: translateY(-25%);
+  font-size: 20px;
+}
 #page-resto .Banner img {
   display: block;
   width: 100%;
@@ -277,6 +310,7 @@ body {
 }
 #page-resto .resto_title h2::before {
   display: inline-block;
+  position: absolute;
   font-style: normal;
   font-variant: normal;
   text-rendering: auto;
@@ -285,7 +319,6 @@ body {
   font-weight: 400;
   content: "\f004";
   font-size: 2rem;
-  position: absolute;
   right: 1rem;
   top: 50%;
   transform: translateY(-50%);
@@ -297,6 +330,7 @@ body {
 }
 #page-resto .resto_title h2::after {
   display: inline-block;
+  position: absolute;
   font-style: normal;
   font-variant: normal;
   text-rendering: auto;
@@ -305,7 +339,6 @@ body {
   font-weight: 900;
   content: "\f004";
   font-size: 2rem;
-  position: absolute;
   right: 1rem;
   top: 50%;
   transform: translateY(-50%);
@@ -325,21 +358,38 @@ body {
 }
 #page-resto .menus {
   display: grid;
-  gap: 1rem;
   grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
 }
 @media (max-width: 1000px) {
   #page-resto .menus {
     grid-template-columns: 1fr;
   }
 }
+#page-resto .menus h3 {
+  text-transform: uppercase;
+  font-weight: 400;
+  position: relative;
+}
+#page-resto .menus h3::after {
+  content: "";
+  position: absolute;
+  top: 1.5rem;
+  left: 0rem;
+  height: 0.25rem;
+  width: 3rem;
+  background-color: #99E2D0;
+}
 #page-resto .menus .menus_category {
-  border: 1px solid red;
-  background-color: white;
-  border-radius: 1rem;
+  overflow: hidden;
 }
 #page-resto .menus .menus_category .menu-item {
   display: flex;
+  background-color: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  margin: 0.5rem;
+  box-shadow: 2px 1px 8px -3px #7e7e7e;
 }
 #page-resto .menus .menus_category .menu-item .menu-item__prix {
   margin-left: auto;
@@ -350,12 +400,71 @@ body {
 }
 #page-resto .menus .menus_category .menu-item .menu-item__description {
   padding: 1rem;
+  overflow: hidden;
+}
+#page-resto .menus .menus_category .menu-item .menu-item__description h4,
+#page-resto .menus .menus_category .menu-item .menu-item__description p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 #page-resto .menus .menus_category .menu-item .menu-item__check {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 0 1rem 1rem 0;
   background-color: #99E2D0;
+  margin-right: -4rem;
+  width: 4rem;
+  transition: margin-right 0.5s;
 }
-#page-resto .menus .menus_category .menu-item > * {
-  border: 1px solid;
+#page-resto .menus .menus_category .menu-item .menu-item__check i {
+  display: grid;
+  place-items: center;
+  background: white;
+  aspect-ratio: 1;
+  width: 2rem;
+  border-radius: 1rem;
+  color: #99E2D0;
+}
+#page-resto .menus .menus_category .menu-item:hover {
+  cursor: pointer;
+}
+#page-resto .menus .menus_category .menu-item:hover .menu-item__check {
+  margin-right: 0;
+}
+#page-resto .menus .menus_category .menu-item:hover i {
+  animation: quarterspin 0.5s ease-in-out;
+}
+@keyframes quarter-spin {
+  0% {
+    transform: rotate(-270deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+#page-resto section.order {
+  height: 30vh;
+  display: grid;
+  place-items: center;
+}
+#page-resto section.order button {
+  color: white;
+  font-weight: 300;
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 2rem;
+  transition: transform 200ms;
+  margin-top: 1rem;
+  cursor: pointer;
+  box-shadow: 2px 1px 8px -3px #7e7e7e;
+  background-image: linear-gradient(to top, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
+}
+#page-resto section.order button:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
 }
 
 /*# sourceMappingURL=style.css.map */

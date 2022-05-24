@@ -1,12 +1,41 @@
 @use "../utils/mixins.scss";
 @use "../utils/variables.scss";
 @use "../utils/colors.scss";
+@use "../utils/animations.scss";
+
+@keyframes quarterspin {
+  0% {
+    transform: rotate(-270deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
 
 body {
   background-color: colors.$lightergrey;
 }
 
 #page-resto {
+  header h1 {
+    box-shadow: none;
+  }
+  header {
+    &::before{ 
+    transition: all 200ms;
+  }
+    &:hover::before{
+      @include mixins.zoom($zoom-level:1.20, $transformation:translateY(-25%) );
+    }
+    &::before {
+      @include mixins.font-awesome($font-weight: 900);
+      content: '\f060';
+      left: 1rem;
+      top: 2%;
+      transform: translateY(-25%);
+      font-size: 20px;
+    }
+  }
   .Banner img {
     display: block;
     width: 100%;
@@ -34,17 +63,34 @@ body {
 
   .menus {
     display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     @media (max-width: variables.$breakpoint) {
       grid-template-columns: 1fr;
     }
-    grid-template-columns: repeat(3, 1fr);
+    h3 {
+      text-transform: uppercase;
+      font-weight: 400;
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 1.5rem;
+        left: 0rem;
+        height: 0.25rem;
+        width: 3rem;
+        background-color: colors.$tertiaire;
+      }
+    }
     .menus_category {
-      border: 1px solid red;
-      background-color: white;
-      border-radius: 1rem;
+      overflow: hidden;
       .menu-item {
         display: flex;
+        background-color: white;
+        border-radius: 1rem;
+        overflow: hidden;
+        margin: 0.5rem;
+        @include mixins.box-shadow;
         .menu-item__prix {
           margin-left: auto;
           font-weight: 900;
@@ -52,16 +98,55 @@ body {
           display: flex;
           align-items: flex-end;
         }
-        .menu-item__description{
+        .menu-item__description {
           padding: 1rem;
+          overflow: hidden;
+          h4,
+          p {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+          }
         }
-        .menu-item__check{
+        .menu-item__check {
+          display: grid;
+          place-items: center;
+          flex-shrink: 0;
+          $button-width: 4rem;
+          border-radius: 0 1rem 1rem 0;
           background-color: colors.$tertiaire;
+          margin-right: -$button-width;
+          width: $button-width;
+          transition: margin-right 0.5s;
+          i {
+            display: grid;
+            place-items: center;
+            background: white;
+            aspect-ratio: 1;
+            width: 2rem;
+            border-radius: 1rem;
+            color: colors.$tertiaire;
+          }
         }
-        & > * {
-          border: 1px solid;
+        &:hover {
+          cursor: pointer;
+          .menu-item__check {
+            margin-right: 0;
+          }
+          i {
+            @include animations.quarterspin;
+            animation: quarterspin 0.5s ease-in-out;
+          }
         }
       }
+    }
+  }
+  section.order {
+    height: 30vh;
+    display: grid;
+    place-items: center;
+    button {
+      @include mixins.base-button;
     }
   }
 }
