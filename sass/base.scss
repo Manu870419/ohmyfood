@@ -12,10 +12,16 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+nav {
+  padding: 0 7rem;
+  @media (max-width: 1000px) {
+    padding: 0;
+  }
+}
 main {
   padding: 0 7rem;
   @media (max-width: 1000px) {
-    padding: 0 1rem;
+    padding: 0 2rem;
   }
 }
 

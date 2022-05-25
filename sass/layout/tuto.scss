@@ -34,6 +34,7 @@
     padding: 1.5rem 2rem;
     flex-grow: 1;
     border-radius: 1rem;
+    margin-right: 2rem;
     @include mixins.box-shadow;
     &:hover {
       @include mixins.zoom;
@@ -43,5 +44,11 @@
       color: colors.$lightgrey;
       font-size: 1.5rem;
     }
+  }
+}
+.tuto h2 {
+  @media (max-width: 1000px) {
+    padding: 1rem 1rem;
+    margin-top: 2rem;
   }
 }
