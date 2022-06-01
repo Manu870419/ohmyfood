@@ -13,9 +13,7 @@
       @media (max-width: variables.$breakpoint) {
         grid-template-columns: 1fr 1fr;
       }
-      @media (max-width: 992px) {
-        grid-template-columns: 1fr;
-      }
+      
       .new {
         position: relative;
       }

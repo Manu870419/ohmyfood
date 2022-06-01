@@ -36,6 +36,7 @@
     border-radius: 1rem;
     margin-right: 2rem;
     @include mixins.box-shadow;
+    cursor: pointer;
     &:hover {
       @include mixins.zoom;
     }

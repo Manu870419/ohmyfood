@@ -21,11 +21,8 @@ body {
     box-shadow: none;
   }
   header {
-    &::before{ 
-    transition: all 200ms;
-  }
-    &:hover::before{
-      @include mixins.zoom($zoom-level:1.20, $transformation:translateY(-25%) );
+    &:hover::before {
+      @include mixins.zoom($zoom-level: 1.2, $transformation: translateY(-25%));
     }
     &::before {
       @include mixins.font-awesome($font-weight: 900);
@@ -34,6 +31,7 @@ body {
       top: 2%;
       transform: translateY(-25%);
       font-size: 20px;
+      transition: transform 200ms;
     }
   }
   .Banner img {
@@ -65,6 +63,9 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
+    & > .menus_category{
+      overflow: hidden;
+    }
     @media (max-width: variables.$breakpoint) {
       grid-template-columns: 1fr;
     }
@@ -82,15 +83,51 @@ body {
         background-color: colors.$tertiaire;
       }
     }
-    .menus_category {
-      overflow: hidden;
-      .menu-item {
+    
+    @media (min-width: 1001px) {
+      .menus_category-1 {
+        grid-column: 1/2;
+        grid-row: 2/3;
+      }
+      .menus_category-2 {
+        grid-column: 1/2;
+        grid-row: 3/4;
+      }
+      .menus_category-3 {
+        grid-column: 1/2;
+        grid-row: 4/4;
+      }
+      .menus_category-31 {
+        grid-column: 1/2;
+        grid-row: 5/5;
+      }
+      .menus_category-4 {
+        grid-column: 2/3;
+        grid-row: 2/3;
+      }
+      .menus_category-5 {
+        grid-column: 2/3;
+        grid-row: 3/4;
+      }
+      .menus_category-6 {
+        grid-column: 2/3;
+        grid-row: 4/4;
+      }
+    }
+
+    .menu-item {
+      @for $i from 1 through 3 {
+        &:nth-child(#{$i}) {
+          animation-delay: 100ms * $i;
+        }
         display: flex;
         background-color: white;
         border-radius: 1rem;
         overflow: hidden;
         margin: 0.5rem;
         @include mixins.box-shadow;
+        animation: appear 1s;
+        animation-fill-mode: both;
         .menu-item__prix {
           margin-left: auto;
           font-weight: 900;
