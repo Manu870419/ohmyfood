@@ -11,7 +11,7 @@
   box-shadow: 2px 1px 8px -3px colors.$lightgrey;
 }
 @mixin zoom ($zoom-level:1.02, $transformation:none) {
-  transform:  $transformation scale($zoom-level);
+  transform: $transformation scale($zoom-level);
 }
 
 @mixin font-awesome($font-weight: 400) {
@@ -36,6 +36,7 @@
   -webkit-background-clip: text;
   opacity: $opacity;
   transition: all 200ms ease-in-out;
+  @include gradient(1);
 }
 
 @mixin heart-animated {

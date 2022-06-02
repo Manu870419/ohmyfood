@@ -121,6 +121,7 @@ header h1 {
 }
 .tuto li {
   position: relative;
+  transition: transform 200ms;
   list-style-type: none;
   background-color: #f6f6f6;
   padding: 1.5rem 2rem;
@@ -146,7 +147,7 @@ header h1 {
   transform: translateY(-50%);
 }
 .tuto li:hover {
-  transform: none scale(1.02);
+  transform: scale(1.02);
 }
 .tuto li i.fas {
   margin-right: 1rem;
@@ -231,6 +232,7 @@ header h1 {
   -webkit-background-clip: text;
   opacity: 1;
   transition: all 200ms ease-in-out;
+  background-image: linear-gradient(to top, rgb(147, 86, 220), rgb(255, 121, 218));
 }
 #homepage .menus .card__description::after {
   display: inline-block;
@@ -251,6 +253,7 @@ header h1 {
   -webkit-background-clip: text;
   opacity: 0;
   transition: all 200ms ease-in-out;
+  background-image: linear-gradient(to top, rgb(147, 86, 220), rgb(255, 121, 218));
   background-image: linear-gradient(to top, rgb(147, 86, 220), rgb(255, 121, 218));
 }
 #homepage .menus .card__description:hover ::after {
@@ -358,6 +361,7 @@ body {
   -webkit-background-clip: text;
   opacity: 1;
   transition: all 200ms ease-in-out;
+  background-image: linear-gradient(to top, rgb(147, 86, 220), rgb(255, 121, 218));
 }
 #page-resto .resto_title h2::after {
   display: inline-block;
@@ -378,6 +382,7 @@ body {
   -webkit-background-clip: text;
   opacity: 0;
   transition: all 200ms ease-in-out;
+  background-image: linear-gradient(to top, rgb(147, 86, 220), rgb(255, 121, 218));
   background-image: linear-gradient(to top, rgb(147, 86, 220), rgb(255, 121, 218));
 }
 #page-resto .resto_title h2:hover ::after {
