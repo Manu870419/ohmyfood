@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2? family= Shrikhand & display=swap");
 @import url("https://fonts.googleapis.com/css2? family= Roboto:wght@300;400;500 & display=swap");
 *,
@@ -171,9 +172,9 @@ header h1 {
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
 }
-@media (max-width: 1000px) {
+@media (max-width: 1024px) {
   #homepage .menus .menus__cards {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 }
 #homepage .menus .menus__cards .new {
@@ -393,16 +394,21 @@ body {
   padding: 0 1rem;
 }
 #page-resto .menus {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
 #page-resto .menus > .menus_category {
   overflow: hidden;
 }
-@media (max-width: 1000px) {
+@media (min-width: 1024px) {
   #page-resto .menus {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    overflow: hidden;
+    justify-content: space-around;
+  }
+  #page-resto .menus > .entrée, #page-resto .menus .plats, #page-resto .menus .déserts {
+    width: 27%;
   }
 }
 #page-resto .menus h3 {
@@ -418,36 +424,6 @@ body {
   height: 0.25rem;
   width: 3rem;
   background-color: #99E2D0;
-}
-@media (min-width: 1001px) {
-  #page-resto .menus .menus_category-1 {
-    grid-column: 1/2;
-    grid-row: 2/3;
-  }
-  #page-resto .menus .menus_category-2 {
-    grid-column: 1/2;
-    grid-row: 3/4;
-  }
-  #page-resto .menus .menus_category-3 {
-    grid-column: 1/2;
-    grid-row: 4/4;
-  }
-  #page-resto .menus .menus_category-31 {
-    grid-column: 1/2;
-    grid-row: 5/5;
-  }
-  #page-resto .menus .menus_category-4 {
-    grid-column: 2/3;
-    grid-row: 2/3;
-  }
-  #page-resto .menus .menus_category-5 {
-    grid-column: 2/3;
-    grid-row: 3/4;
-  }
-  #page-resto .menus .menus_category-6 {
-    grid-column: 2/3;
-    grid-row: 4/4;
-  }
 }
 #page-resto .menus .menu-item {
   display: flex;
