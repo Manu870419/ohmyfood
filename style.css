@@ -247,9 +247,6 @@ header h1 {
 #homepage .menus .card__image-3 {
   background-image: url("assets/menu-3.jpg");
 }
-#homepage .menus .card__image-4 {
-  background-image: url("assets/menu-4.jpg");
-}
 #homepage .menus .card__description {
   position: relative;
   background-color: white;
@@ -298,7 +295,7 @@ header h1 {
   background-image: linear-gradient(to top, rgb(147, 86, 220), rgb(255, 121, 218));
   background-image: linear-gradient(to top, rgb(147, 86, 220), rgb(255, 121, 218));
 }
-#homepage .menus .card__description:hover ::after {
+#homepage .menus .card__description:hover::after {
   opacity: 1;
   transform: translateY(-50%) scale(1.1);
 }
@@ -429,7 +426,7 @@ body {
   background-image: linear-gradient(to top, rgb(147, 86, 220), rgb(255, 121, 218));
   background-image: linear-gradient(to top, rgb(147, 86, 220), rgb(255, 121, 218));
 }
-#page-resto .resto_title h2:hover ::after {
+#page-resto .resto_title h2:hover::after {
   opacity: 1;
   transform: translateY(-50%) scale(1.1);
 }

@@ -10,7 +10,7 @@
 @mixin box-shadow {
   box-shadow: 2px 1px 8px -3px colors.$lightgrey;
 }
-@mixin zoom ($zoom-level:1.02, $transformation: null) {
+@mixin zoom($zoom-level: 1.02, $transformation: null) {
   transform: $transformation scale($zoom-level);
 }
 
@@ -24,9 +24,10 @@
   font-family: 'font Awesome 5 Free';
   font-weight: $font-weight;
 }
+
 @mixin heart($opacity: 1, $font-weight: 400, $color: inherit) {
   @include font-awesome($font-weight);
-  content:'\f004';
+  content: '\f004';
   font-size: 2rem;
   right: 1rem;
   top: 50%;
@@ -50,7 +51,7 @@
     @include heart($opacity: 0, $font-weight: 900, $color: transparent);
     @include gradient(1);
   }
-  &:hover ::after {
+  &:hover::after {
     opacity: 1;
     transform: translateY(-50%) scale(1.1);
   }
