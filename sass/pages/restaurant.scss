@@ -61,24 +61,26 @@ body {
 
   .menus {
     gap: 1rem;
-    & > .menus_category{
+    & > .menus_category {
       overflow: hidden;
     }
     @media (min-width: variables.$breakpoint) {
       display: flex;
       flex-wrap: wrap;
-      gap:1rem;
+      gap: 1rem;
       overflow: hidden;
       justify-content: space-around;
-      & > .entrée, .plats, .déserts{
-        width:27%;
+      & > .entrée,
+      .plats,
+      .déserts {
+        width: 27%;
       }
     }
-     
 
     h3 {
       text-transform: uppercase;
       font-weight: 400;
+      margin-bottom: 1rem;
       position: relative;
       &::after {
         content: '';
@@ -90,13 +92,15 @@ body {
         background-color: colors.$tertiaire;
       }
     }
-    
-    
+    .menus_category {
+      overflow: hidden;
 
-    .menu-item {
-      @for $i from 1 through 3 {
-        &:nth-child(#{$i}) {
-          animation-delay: 100ms * $i;
+      .menu-item {
+        $numberofitems: 3;
+        @for $i from 1 through $numberofitems {
+          &:nth-child(#{$i}) {
+            animation-delay: 100ms * $i;
+          }
         }
         display: flex;
         background-color: white;
@@ -134,11 +138,12 @@ body {
           width: $button-width;
           transition: margin-right 0.5s;
           i {
+            $size: 1rem;
             display: grid;
             place-items: center;
             background: white;
-            aspect-ratio: 1;
-            width: 2rem;
+            height: $size;
+            width: $size;
             border-radius: 1rem;
             color: colors.$tertiaire;
           }
@@ -156,7 +161,7 @@ body {
       }
     }
   }
-  section.order {
+ .order {
     height: 30vh;
     display: grid;
     place-items: center;

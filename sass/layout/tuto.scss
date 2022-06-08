@@ -8,12 +8,14 @@
   & ol {
     display: flex;
     gap: 2rem;
-    @media (max-width: 1000px) {
+    @media (max-width:variables.$breakpoint) {
       flex-direction: column;
     }
   }
   & li {
     position: relative;
+    display: flex;
+    align-items: center;
     transition: transform 200ms;
     &::before {
       content: counter(steps);
@@ -39,7 +41,11 @@
     @include mixins.box-shadow;
     cursor: pointer;
     &:hover {
-      transform: scale(1.02);
+      @include mixins.zoom;
+      background-color: lighten(colors.$primaire, 35%);
+      i::before {
+        color:colors.$primaire;
+      }
     }
     & i.fas {
       margin-right: 1rem;
@@ -49,7 +55,7 @@
   }
 }
 .tuto h2 {
-  @media (max-width: 1000px) {
+  @media (max-width:2620px) {
     padding: 1rem 1rem;
     margin-top: 2rem;
   }
