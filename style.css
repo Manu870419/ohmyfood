@@ -247,6 +247,9 @@ header h1 {
 #homepage .menus .card__image-3 {
   background-image: url("assets/menu-3.jpg");
 }
+#homepage .menus .card__image-4 {
+  background-image: url("assets/menu-4.jpg");
+}
 #homepage .menus .card__description {
   position: relative;
   background-color: white;
