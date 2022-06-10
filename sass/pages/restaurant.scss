@@ -92,23 +92,23 @@ body {
         background-color: colors.$tertiaire;
       }
     }
+
     .menus_category {
       overflow: hidden;
-
-      .menu-item {
-        $numberofitems: 3;
-        @for $i from 1 through $numberofitems {
-          &:nth-child(#{$i}) {
-            animation-delay: 100ms * $i;
-          }
+      $numberofitems: 4;
+      @for $i from 1 through $numberofitems {
+        &:nth-child(#{$i}) {
+          animation-delay: 100ms * $i;
+          animation: appear 1s * $i;
         }
+      }
+      .menu-item {
         display: flex;
         background-color: white;
         border-radius: 1rem;
         overflow: hidden;
         margin: 0.5rem;
-        @include mixins.box-shadow;
-        animation: appear 1s;
+        @include mixins.box-shadow; 
         animation-fill-mode: both;
         .menu-item__prix {
           margin-left: auto;
@@ -161,7 +161,7 @@ body {
       }
     }
   }
- .order {
+  .order {
     height: 30vh;
     display: grid;
     place-items: center;
