@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "sass": "sass --watch style.scss:style.css",
-    "build": "postcss"
+    "build": "postcss style.css -u autoprefixer cssnano -o ./build/style.min.css"
   },
   "repository": {
     "type": "git",
@@ -17,8 +17,9 @@
     "url": "https://github.com/Manu870419/ohmyfood/issues"
   },
   "homepage": "https://github.com/Manu870419/ohmyfood#readme",
-  "dependencies": {},
   "devDependencies": {
+    "autoprefixer": "^10.4.7",
+    "cssnano": "^5.1.11",
     "postcss": "^8.4.14",
     "postcss-cli": "^9.1.0",
     "sass": "^1.51.0"
