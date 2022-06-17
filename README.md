@@ -2,8 +2,7 @@
 # ohmyfood
 
 This is the third project of Openclassrooms
-
-https://github.com/Manu870419/ohmyfood.git
+ https://manu870419.github.io/ohmyfood/
 ---
 
 Technologies used: HTML, css, keyframes, mixins, 
