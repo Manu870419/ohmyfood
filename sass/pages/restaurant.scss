@@ -37,9 +37,9 @@ body {
   .Banner img {
     display: block;
     width: 100%;
-    height: 70vh;
+    height: 31vh;
     object-fit: cover;
-    object-position: center bottom;
+    object-position: center;
   }
 
   .resto_title {
@@ -59,7 +59,7 @@ body {
     padding: 0 1rem;
   }
 
-  .menus {
+  .menus  {
     gap: 1rem;
     & > .menus_category {
       overflow: hidden;
