@@ -37,6 +37,7 @@
   -webkit-background-clip: text;
   opacity: $opacity;
   transition: all 200ms ease-in-out;
+  cursor: pointer;
   @include gradient(1);
 }
 
