@@ -132,8 +132,7 @@
     "yargs-parser": "^21.0.1"
   },
   "scripts": {
-    "sass": "sass --watch style.scss:style.css",
-    "build": "sass --watch --style=compressed main.scss main.css"
+    "sass": "sass --watch sass/style.scss:public/styles/style.css"
   },
   "repository": {
     "type": "git",
