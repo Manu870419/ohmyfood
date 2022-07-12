@@ -8,7 +8,7 @@
   & ol {
     display: flex;
     gap: 2rem;
-    @media (max-width:variables.$breakpoint) {
+    @media (max-width:$breakpoint) {
       flex-direction: column;
     }
   }
@@ -21,35 +21,35 @@
       content: counter(steps);
       counter-increment: steps;
       color: white;
-      background-color: colors.$primaire;
-      width: 2 * variables.$tuto-bullet-heigth;
-      height: 2 * variables.$tuto-bullet-heigth;
+      background-color: $primaire;
+      width: 2 * $tuto-bullet-heigth;
+      height: 2 * $tuto-bullet-heigth;
       display: grid;
       place-items: center;
       border-radius: 50%;
       position: absolute;
       top: 50%;
-      left: -1 * variables.$tuto-bullet-heigth;
+      left: -1 * $tuto-bullet-heigth;
       transform: translateY(-50%);
     }
     list-style-type: none;
-    background-color: #f6f6f6;
+    background-color: $lightergrey;
     padding: 1.5rem 2rem;
     flex-grow: 1;
     border-radius: 1rem;
     margin-right: 2rem;
-    @include mixins.box-shadow;
+    @include box-shadow;
     cursor: pointer;
     &:hover {
-      @include mixins.zoom;
-      background-color: lighten(colors.$primaire, 35%);
+      @include zoom;
+      background-color: lighten($primaire, 35%);
       i::before {
-        color:colors.$primaire;
+        color:$primaire;
       }
     }
     & i.fas {
       margin-right: 1rem;
-      color: colors.$lightgrey;
+      color: $lightgrey;
       font-size: 1.5rem;
     }
   }

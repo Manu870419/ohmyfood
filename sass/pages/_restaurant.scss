@@ -13,7 +13,7 @@
 }
 
 body {
-  background-color: colors.$lightergrey;
+  background-color: $lightergrey;
 }
 
 #page-resto {
@@ -22,10 +22,10 @@ body {
   }
   header {
     &:hover::before {
-      @include mixins.zoom($zoom-level: 1.2, $transformation: translateY(-25%));
+      @include zoom($zoom-level: 1.2, $transformation: translateY(-25%));
     }
     &::before {
-      @include mixins.font-awesome($font-weight: 900);
+      @include font-awesome($font-weight: 900);
       content: '\f060';
       left: 1rem;
       top: 2%;
@@ -44,14 +44,14 @@ body {
 
   .resto_title {
     margin-top: -2rem;
-    background-color: colors.$lightergrey;
+    background-color: $lightergrey;
 
     h2 {
       font-family: 'shrikhand', 'cursive';
       padding: 2rem 1rem;
-      @include mixins.heart-animated;
+      @include heart-animated;
       border-radius: 2rem 2rem 0 0;
-      background-color: colors.$lightergrey;
+      background-color: $lightergrey;
     }
   }
 
@@ -64,7 +64,7 @@ body {
     & > .menus_category {
       overflow: hidden;
     }
-    @media (min-width: variables.$breakpoint) {
+    @media (min-width: $breakpoint) {
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;
@@ -89,7 +89,7 @@ body {
         left: 0rem;
         height: 0.25rem;
         width: 3rem;
-        background-color: colors.$tertiaire;
+        background-color: $tertiaire;
       }
     }
 
@@ -108,7 +108,7 @@ body {
         border-radius: 1rem;
         overflow: hidden;
         margin: 0.5rem;
-        @include mixins.box-shadow; 
+        @include box-shadow; 
         animation-fill-mode: both;
         .menu-item__prix {
           margin-left: auto;
@@ -133,7 +133,7 @@ body {
           flex-shrink: 0;
           $button-width: 4rem;
           border-radius: 0 1rem 1rem 0;
-          background-color: colors.$tertiaire;
+          background-color: $tertiaire;
           margin-right: -$button-width;
           width: $button-width;
           transition: margin-right 0.5s;
@@ -144,7 +144,7 @@ body {
             height: 1.5rem;
             width: 1.5rem;
             border-radius: 1rem;
-            color: colors.$tertiaire;
+            color: $tertiaire;
           }
         }
         &:hover {
@@ -153,7 +153,7 @@ body {
             margin-right: 0;
           }
           i {
-            @include animations.quarterspin;
+            @include quarterspin;
             animation: quarterspin 0.5s ease-in-out;
           }
         }
@@ -165,7 +165,7 @@ body {
     display: grid;
     place-items: center;
     button {
-      @include mixins.base-button;
+      @include base-button;
     }
   }
 }

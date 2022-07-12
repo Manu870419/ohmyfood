@@ -4,13 +4,13 @@
 
 #homepage {
   .menus {
-    background-color: #f6f6f6;
+    background-color: $lightergrey;
     margin-bottom: 2rem;
     .menus__cards {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2rem;
-      @media (max-width: variables.$breakpoint) {
+      @media (max-width: $breakpoint) {
         grid-template-columns: 1fr;
       }
       
@@ -22,8 +22,8 @@
         position: absolute;
         height: 2rem;
         width: 5rem;
-        background-color: colors.$tertiaire;
-        color: darken(colors.$tertiaire, 50%);
+        background-color: $tertiaire;
+        color: darken($tertiaire, 50%);
         display: grid;
         place-items: center;
         right: 1rem;
@@ -43,7 +43,7 @@
         }
       }
       &__description {
-        @include mixins.heart-animated;
+        @include heart-animated;
       }
 
       h3,
