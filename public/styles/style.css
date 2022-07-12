@@ -1,28 +1,30 @@
 /*
-Error: Invalid CSS after "...@include mixins": expected "}", was ".base-button;"
-        on line 16 of sass/layout/_explorer.scss
-        from line 4 of sass/style.scss
+Error: Invalid CSS after "...d-color: colors": expected ";", was ".$lightergrey;"
+        on line 9 of sass/layout/_city.scss
+        from line 3 of sass/style.scss
 
-11:   & p {
-12:     font-size: 1rem;
-13:     margin-bottom: 1rem;
+4:   width: 100%;
+5:   display: flex;
+6:   align-items: center;
+7:   justify-content: center;
+8:   gap: 1rem;
+9:   background-color: colors.$lightergrey;
+10:   text-align: center;
+11:   padding: 1rem;
+12:   & i {
+13:     font-size: 20px;
 14:   }
-15:   & button {
-16:     @include mixins.base-button;
-17:     font-size: 1rem;
-18:   }
-19: }
-20: 
-21: .loader {
 
 Backtrace:
-sass/layout/_explorer.scss:16
-sass/style.scss:4
+sass/layout/_city.scss:9
+sass/style.scss:3
 /usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/scss/parser.rb:1308:in `expected'
 /usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/scss/parser.rb:1238:in `expected'
 /usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/scss/parser.rb:1233:in `tok!'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/scss/parser.rb:690:in `block'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/scss/parser.rb:758:in `declaration_or_ruleset'
+/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/scss/parser.rb:815:in `block in try_declaration'
+/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/scss/parser.rb:1284:in `rethrow'
+/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/scss/parser.rb:820:in `try_declaration'
+/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/scss/parser.rb:743:in `declaration_or_ruleset'
 /usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/scss/parser.rb:708:in `block_child'
 /usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/scss/parser.rb:700:in `block_contents'
 /usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/scss/parser.rb:689:in `block'
@@ -80,4 +82,4 @@ sass/style.scss:4
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Invalid CSS after \"...@include mixins\": expected \"}\", was \".base-button;\"\A         on line 16 of sass/layout/_explorer.scss\A         from line 4 of sass/style.scss\A \A 11:   & p {\A 12:     font-size: 1rem;\A 13:     margin-bottom: 1rem;\A 14:   }\A 15:   & button {\A 16:     @include mixins.base-button;\A 17:     font-size: 1rem;\A 18:   }\A 19: }\A 20: \A 21: .loader {"; }
+  content: "Error: Invalid CSS after \"...d-color: colors\": expected \";\", was \".$lightergrey;\"\A         on line 9 of sass/layout/_city.scss\A         from line 3 of sass/style.scss\A \A 4:   width: 100%;\A 5:   display: flex;\A 6:   align-items: center;\A 7:   justify-content: center;\A 8:   gap: 1rem;\A 9:   background-color: colors.$lightergrey;\A 10:   text-align: center;\A 11:   padding: 1rem;\A 12:   & i {\A 13:     font-size: 20px;\A 14:   }"; }
