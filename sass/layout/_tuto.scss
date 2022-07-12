@@ -22,14 +22,14 @@
       counter-increment: steps;
       color: white;
       background-color: $primaire;
-      width: 2 * $tuto-bullet-heigth;
-      height: 2 * $tuto-bullet-heigth;
+      width: 2 * $tuto-bullet-height;
+      height: 2 * $tuto-bullet-height;
       display: grid;
       place-items: center;
       border-radius: 50%;
       position: absolute;
       top: 50%;
-      left: -1 * $tuto-bullet-heigth;
+      left: -1 * $tuto-bullet-height;
       transform: translateY(-50%);
     }
     list-style-type: none;
