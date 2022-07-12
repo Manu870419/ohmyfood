@@ -1,4 +1,4 @@
-@use "../utils/colors.scss";
+@import "../utils/colors.scss";
 
 .city {
   width: 100%;
@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  background-color: colors.$lightergrey;
+  background-color: $lightergrey;
   text-align: center;
   padding: 1rem;
   & i {

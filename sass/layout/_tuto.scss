@@ -1,6 +1,6 @@
-@use "../utils/mixins.scss";
-@use "../utils/variables.scss";
-@use "../utils/colors.scss";
+@import "../utils/mixins.scss";
+@import "../utils/variables.scss";
+@import "../utils/colors.scss";
 
 .tuto {
   counter-reset: steps;
