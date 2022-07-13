@@ -21,7 +21,7 @@
       content: counter(steps);
       counter-increment: steps;
       color: white;
-      background-color: $primaire;
+      background-color: $primary;
       width: 2 * $tuto-bullet-height;
       height: 2 * $tuto-bullet-height;
       display: grid;
@@ -42,9 +42,9 @@
     cursor: pointer;
     &:hover {
       @include zoom;
-      background-color: lighten($primaire, 35%);
+      background-color: lighten($primary, 35%);
       i::before {
-        color:$primaire;
+        color:$primary;
       }
     }
     & i.fas {
