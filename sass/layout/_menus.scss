@@ -39,14 +39,14 @@
       }
       @for $i from 1 through 4 {
         &__image-#{$i} {
-          background-image: url(/public/assets/menu-#{$i}.jpg);
+          background-image: url('/public/assets/menu-#{$i}.jpg');
         }
       }
       &__description {
         @include heart-animated;
       }
 
-      h3,
+      h3
       p {
         padding: 0.3rem;
       }
